@@ -6,9 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --config webpack.config.js",
-    "build": "webpack",
-    "server": "babel-node server.js",
-    "build": "webpack --config webpack.config.prod.js --progress"
+    "build": "webpack --config webpack.config.prod.js --progress",
+    "server": "babel-node server.js"
   },
   "author": "",
   "license": "ISC",
