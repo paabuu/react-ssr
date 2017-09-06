@@ -2,7 +2,8 @@ import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 // import { routerReducer } from 'react-router-redux';
 import reducer from './reducer.js';
 
+const finalCreateStore = (initialState) => {
+    return createStore(reducer, initialState);
+};
 
-const store = createStore(reducer);
-
-export default store;
+export default finalCreateStore;
