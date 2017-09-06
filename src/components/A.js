@@ -69,7 +69,7 @@ class ModuleA extends Component {
         return (
             <div>
                 <input type="text" name="input" value={ this.state.input } onChange={ this.handleInput.bind(this) }/>
-                <p>计数: { this.state.mapCount.get('num') }</p>
+                <p>计数: { this.state.mapCount.get('num') } { this.props.num }</p>
                  <button onClick={ this.handlePlusNumber }>+</button>
             </div>
         )
