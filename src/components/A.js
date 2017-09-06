@@ -62,7 +62,8 @@ class ModuleA extends Component {
             mapCount: mapCount.update('num', n => n + 1)
         }));
         console.log(this.state.count.num, '普通的count');
-        console.log(this.state.mapCount.get('num'), 'map Count')
+        console.log(this.state.mapCount.get('num'), 'map Count');
+        this.props.minux();
     }
 
     render() {
@@ -70,7 +71,7 @@ class ModuleA extends Component {
             <div>
                 <input type="text" name="input" value={ this.state.input } onChange={ this.handleInput.bind(this) }/>
                 <p>计数: { this.state.mapCount.get('num') } { this.props.num }</p>
-                 <button onClick={ this.handlePlusNumber }>+</button>
+                <button onClick={ this.handlePlusNumber }>+</button>
             </div>
         )
     }

@@ -1,4 +1,4 @@
-export function Add () {
+export function add () {
     return {
         type: 'ADD'
     }

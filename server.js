@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const WebpackDevMiddleware = require('webpack-dev-middleware');
 const WebpackHotMiddleware = require('webpack-hot-middleware');
 const path = require('path');
+const open = require('open');
 
 const app = express();
 const config = require('./webpack.config.js');
@@ -46,10 +47,11 @@ app.use(WebpackHotMiddleware(compile));
 app.use(express.static('dist'));
 
 app.get('*', (req, res) => {
-    const store = configStore;
     const state = {
         num: 1000
     };
+
+    const store = configStore(state);
 
     Promise.all([
         store.dispatch({
@@ -71,10 +73,11 @@ app.get('*', (req, res) => {
                 </StaticRouter>
             </Provider>
         );
-        res.end(renderFullPage(html, state))
+        res.end(renderFullPage(html, store.getState()))
     })
 });
 
 app.listen(3000, () => {
     console.log('server is running at port 3000');
+    open('http://localhost:3000')
 });

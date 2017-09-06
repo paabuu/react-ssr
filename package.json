@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --config webpack.config.js",
-    "build": "webpack",
+    "build": "webpack --config webpack.config.prod.js --progress",
     "server": "babel-node server.js"
   },
   "author": "",
@@ -22,6 +22,7 @@
     "express": "^4.15.4",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.30.1",
+    "open": "0.0.5",
     "style-loader": "^0.18.2",
     "webpack": "^3.5.5",
     "webpack-dev-middleware": "^1.12.0",
