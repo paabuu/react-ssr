@@ -20,6 +20,14 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.jsx?$/,
+                enforce: 'pre',
+                include: path.resolve('src'),
+                use: [
+                    'eslint-loader'
+                ]
+            },
+            {
                 test: /.css$/,
                 use: [
                     'style-loader',
@@ -42,9 +50,13 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
-        // new HtmlWebpackPlugin({
-        //     title: 'Output Management'
-        // }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                eslint: {
+                    quiet: true
+                }
+            }
+        })
     ]
 }

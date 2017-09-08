@@ -26,7 +26,7 @@ class ModuleA extends Component {
     handleInput(e) {
         this.setState({
             [e.target.name]: e.target.value
-        })
+        });
     }
 
     shouldComponentUpdate(nextProps, nextState) {
@@ -56,7 +56,7 @@ class ModuleA extends Component {
         let count = this.state.count;
         count.num = count.num + 1;
         this.setState({
-            count,
+            count
         });
         this.setState(({ mapCount }) => ({
             mapCount: mapCount.update('num', n => n + 1)
@@ -71,27 +71,30 @@ class ModuleA extends Component {
             <div>
                 <input type="text" name="input" value={ this.state.input } onChange={ this.handleInput.bind(this) }/>
                 <p>计数: { this.props.num }</p>
-                 <button onClick={ this.handlePlusNumber }>+</button>
+                <button onClick={ this.handlePlusNumber }>+</button>
             </div>
-        )
+        );
     }
 
     componentDidMount() {
         // this.props.Add()
+        // if (1) {
+        //
+        // }
     }
 }
 
 export default connect(({ num }) => {
     return {
         num
-    }
+    };
 }, (dispatch) => {
     return {
         ...bindActionCreators(actions, dispatch),
         minux: () => {
             dispatch({
                 type: "Minux"
-            })
+            });
         }
-    }
+    };
 })(ModuleA);

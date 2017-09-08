@@ -9,6 +9,6 @@ const Routes = () => (
         <Route exact path="/" component={ A }></Route>
         <Route path="/b" component={ B }></Route>
     </div>
-)
+);
 
 export default Routes;
