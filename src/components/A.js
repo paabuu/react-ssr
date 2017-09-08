@@ -60,7 +60,7 @@ class ModuleA extends Component {
         });
         this.setState(({ mapCount }) => ({
             mapCount: mapCount.update('num', n => n + 1)
-        }));
+        }));                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
         console.log(this.state.count.num, '普通的count');
         console.log(this.state.mapCount.get('num'), 'map Count');
         this.props.minux();
